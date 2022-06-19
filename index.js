@@ -1,4 +1,7 @@
 const uniqueWolfs = (arr) => {
+  if (arr.length < 5 || arr.length > 200000) {
+    return "Tür ID'leri en az 5, en fazla 200.000 değer içerebilir. ";
+  }
   let obj = {};
   arr.map((i) => {
     if (obj[i]) {
@@ -17,9 +20,10 @@ const uniqueWolfs = (arr) => {
   });
   return max[0];
 };
+// For Browser
 const input = prompt("Tür ID'lerini Girin : ");
-// Example
-// const input = "122 124 4 10920981 ";
+// For Console
+// const input = "1 2345432134";
 
 const arr = input.replace(/\s/g, "").replace(/\D/g, "").split("");
 
